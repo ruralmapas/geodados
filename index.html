@@ -11,66 +11,215 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{--bg:#0c110f;--panel:#121a16;--text:#edf2ed;--muted:#9aa99e;--line:rgba(205,225,211,.12);--accent:#a8c88a;--accent-2:#d2e4b6;--max:1160px;--mono:"DM Mono",monospace;--sans:"Manrope",sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}.wrap{width:min(100% - 48px,var(--max));margin:0 auto}.mono{font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;font-size:.75rem;color:var(--muted)}
-    .nav{position:fixed;z-index:20;inset:0 0 auto;border-bottom:1px solid transparent;transition:.3s;background:rgba(12,17,15,.35)}.nav.scrolled{background:rgba(12,17,15,.86);backdrop-filter:blur(12px);border-color:var(--line)}.nav-inner{height:80px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.04em}.brand-mark{width:34px;height:34px;flex:0 0 34px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;overflow:hidden}.brand-mark img{width:100%;height:100%;object-fit:contain}.nav-links{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:.95rem}.nav-links a{position:relative}.nav-links a:after{content:"";position:absolute;left:0;bottom:-8px;width:100%;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:center;transition:transform .25s ease}.nav-links a:hover:after,.nav-links a:focus-visible:after{transform:scaleX(1)}.menu-btn{display:none;background:transparent;border:1px solid var(--line);color:var(--text);padding:10px 14px;border-radius:999px;cursor:pointer}
-    section{padding:110px 0;border-top:1px solid var(--line)}.hero{min-height:760px;display:flex;align-items:center;padding-top:120px;background:radial-gradient(ellipse at 75% 35%,rgba(119,153,92,.13),transparent 40%),linear-gradient(180deg,#0c110f,#101713)}.hero-content{width:100%}.eyebrow{display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";width:24px;height:1px;background:var(--accent)}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(4rem,10vw,8.5rem);line-height:.92;letter-spacing:-.09em;margin:28px 0}h1 span{color:var(--accent)}.hero-copy{max-width:650px;color:var(--muted);font-size:1.08rem}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--line);padding:12px 18px;border-radius:999px;font-weight:700;transition:.2s}.btn:hover{border-color:var(--accent);transform:translateY(-2px)}.btn.primary{background:var(--accent);color:#152016;border-color:var(--accent)}.hero-meta{display:flex;gap:28px;margin-top:70px;color:var(--muted);font-size:.88rem}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:8px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:48px}.section-head h2{font-size:clamp(2.4rem,5vw,4.2rem);line-height:1;letter-spacing:-.07em;margin:12px 0 0}.section-head>p{max-width:390px;color:var(--muted);margin:0}.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px}.about-text{max-width:680px;color:var(--muted);font-size:1.04rem}.about-text strong{color:var(--text)}.skill-panel{padding:28px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}.skill-panel h3{font-size:1.05rem}.tags{display:flex;flex-wrap:wrap;gap:9px}.tag{border:1px solid var(--line);border-radius:999px;padding:7px 11px;color:var(--muted);font-size:.84rem}.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.project{padding:26px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}.project.featured{grid-column:span 2}.project-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px}.project-icon{width:40px;height:40px;color:var(--accent)}.project-icon svg{width:100%;height:100%}.project h3{font-size:1.25rem}.project p,.project li{color:var(--muted)}.project ul{padding-left:18px}.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.role{padding:25px;border-top:1px solid var(--accent);background:linear-gradient(180deg,rgba(168,200,138,.06),transparent)}.role-meta{font-family:var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-size:.72rem;margin-bottom:22px}.role h3{font-size:1.1rem}.role p{color:var(--muted);margin:0}.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.gallery-item{margin:0;position:relative;overflow:hidden;border-radius:16px;background:var(--panel);border:1px solid var(--line);min-height:250px}.gallery-item img{width:100%;height:100%;min-height:250px;object-fit:cover;transition:transform .5s}.gallery-item:hover img{transform:scale(1.04)}.gallery-item figcaption{position:absolute;inset:auto 0 0;padding:40px 18px 18px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#d4ded6;font-size:.85rem}.gallery-item strong{display:block;color:white;font-size:1rem;margin-bottom:4px}.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;padding:clamp(28px,6vw,64px);border:1px solid var(--line);border-radius:24px;background:radial-gradient(ellipse at 85% 20%,rgba(168,200,138,.1),transparent 40%),var(--panel)}.contact h2{font-size:clamp(2.5rem,5vw,4.5rem);line-height:1;letter-spacing:-.07em;margin:15px 0}.contact p{color:var(--muted);max-width:480px}.contact-list{display:flex;gap:25px;flex-wrap:wrap;margin-top:30px}.contact-item{display:flex;align-items:center;gap:12px}.mini{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--accent);font-family:var(--mono);font-size:.75rem}.contact-item span,.contact-item small{display:block}.contact-item small{color:var(--muted)}.contact-box{align-self:center;border:1px solid var(--line);border-radius:16px;padding:25px}.contact-box p{margin:16px 0 22px}footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem}.footer-inner{display:flex;justify-content:space-between;gap:20px}.footer-links{display:flex;gap:18px}.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}.reveal.visible{opacity:1;transform:none}
+    .nav{position:fixed;z-index:20;inset:0 0 auto;border-bottom:1px solid transparent;transition:.3s;background:rgba(12,17,15,.35)}.nav.scrolled{background:rgba(12,17,15,.86);backdrop-filter:blur(12px);border-color:var(--line)}.nav-inner{height:80px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.04em}.brand-mark{width:128px;height:38px;flex:0 0 128px;border-radius:12px;background:transparent;display:grid;place-items:center;overflow:hidden;padding:0}.brand-mark img{width:100%;height:100%;object-fit:contain}.nav-links{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:.95rem}.nav-links a{position:relative}.nav-links a:after{content:"";position:absolute;left:0;bottom:-8px;width:100%;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:center;transition:transform .25s ease}.nav-links a:hover:after,.nav-links a:focus-visible:after{transform:scaleX(1)}.menu-btn{display:none;background:transparent;border:1px solid var(--line);color:var(--text);padding:10px 14px;border-radius:999px;cursor:pointer}
+    .hero{min-height:760px;display:flex;align-items:center;padding-top:120px;background:radial-gradient(ellipse at 75% 35%,rgba(119,153,92,.13),transparent 40%)}.hero-content{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}.eyebrow{margin-bottom:18px}.hero h1{margin:0;font-size:clamp(3.6rem,7vw,7rem);line-height:.88;letter-spacing:-.07em}.hero h1 span{color:var(--accent)}.hero-copy{max-width:620px;font-size:1.08rem;color:var(--muted);margin-top:20px}.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 22px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.02);font-weight:600;transition:.25s}.btn:hover{transform:translateY(-1px);border-color:rgba(205,225,211,.3)}.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#101713;border-color:transparent}.hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:38px;font-size:.82rem;color:var(--muted)}.hero-meta span{display:inline-flex;align-items:center;gap:8px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(168,200,138,.12)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:34px}.section-head h2{margin:8px 0 0;font-size:clamp(2.4rem,4vw,4rem);line-height:1.08;letter-spacing:-.06em}.section-head p{max-width:560px;color:var(--muted);margin:0}.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:start}.about-text{display:grid;gap:18px}.about-text p{margin:0;color:var(--muted)}.skill-panel{background:linear-gradient(180deg,rgba(18,26,22,.92),rgba(12,17,15,.9));border:1px solid var(--line);border-radius:22px;padding:26px}.skill-panel h3{margin-top:0;margin-bottom:18px;font-size:1.35rem}.tags{display:flex;flex-wrap:wrap;gap:10px}.tag{display:inline-flex;padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(205,225,211,.02);color:var(--text);font-size:.86rem}
+    .projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.project{padding:26px;border:1px solid var(--line);background:rgba(255,255,255,.01);border-radius:22px;display:flex;flex-direction:column;gap:18px;min-height:100%}.project.featured{grid-column:span 2;background:linear-gradient(135deg,rgba(168,200,138,.08),rgba(205,225,211,.02))}.project-top{display:flex;justify-content:space-between;align-items:center}.project-icon{width:52px;height:52px;border-radius:14px;border:1px solid rgba(205,225,211,.2);display:grid;place-items:center;background:rgba(168,200,138,.06);color:var(--accent)}.project-icon svg{width:24px;height:24px}.project h3{margin:0;font-size:1.4rem}.project p{margin:0;color:var(--muted)}.project ul{margin:0;padding-left:18px;color:var(--muted);display:grid;gap:8px}.project li::marker{color:var(--accent)}
+    .timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.role{padding:26px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.02)}.role-meta{margin-bottom:12px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-family:var(--mono)}.role h3{margin:0 0 10px}.role p{margin:0;color:var(--muted)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.gallery-item{display:grid;gap:10px}.gallery-item img{width:100%;height:290px;object-fit:cover;border-radius:18px;border:1px solid var(--line)}.gallery-item figcaption{color:var(--muted);font-size:.95rem;line-height:1.6}.gallery-item figcaption strong{display:block;color:var(--text);margin-bottom:4px}
+    .contact{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:end;padding:32px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,rgba(168,200,138,.08),rgba(17,23,19,.8))}.contact h2{margin:10px 0 12px;font-size:clamp(2.4rem,4vw,4rem);letter-spacing:-.06em;line-height:1.04}.contact p{margin:0;color:var(--muted)}.contact-card{border:1px solid var(--line);border-radius:20px;padding:24px;background:rgba(12,17,15,.9)}.contact-card strong{display:block;font-size:1.4rem;margin-bottom:8px}.contact-card a{color:var(--accent);font-weight:700}
+    footer{padding:26px 0 52px}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--muted);border-top:1px solid var(--line);padding-top:24px}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-links a:hover{color:var(--text)}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:none}
     @media(max-width:980px){.about-grid,.contact,.timeline{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:800px){.nav-links{display:none;position:absolute;top:75px;left:0;right:0;background:rgba(12,17,15,.97);padding:22px 24px 28px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.nav-links.open{display:flex}.menu-btn{display:inline-flex}.section-head{flex-direction:column;align-items:flex-start}.footer-inner{flex-direction:column;align-items:flex-start}}@media(max-width:600px){.wrap{width:min(100% - 34px,var(--max))}.nav-inner{height:68px}.hero{min-height:690px;padding-top:130px}.hero-meta{margin-top:42px;gap:14px;flex-direction:column}.section-head h2{font-size:2.2rem}.gallery-grid{grid-template-columns:1fr}.gallery-item img{height:240px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
   </style>
 </head>
 <body>
-  <header class="nav" id="navbar"><div class="wrap nav-inner">
-    <a class="brand" href="#inicio" aria-label="Rural Mapas — início"><span class="brand-mark"><img src="imagens/RuralMapas-SeteLagoasFoto13.png" alt="Rural Mapas"></span><span>Rural Mapas<span style="color:var(--accent)">.</span></span></a>
-    <nav class="nav-links" id="navLinks" aria-label="Navegação principal"><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#atuacao">Atuação</a><a href="#galeria">Galeria</a><a href="#contato">Contato</a></nav>
-    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
-  </div></header>
+  <header class="nav" id="navbar">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#inicio" aria-label="Rural Mapas — início">
+        <span class="brand-mark"><img src="imagens/RuralMapas-SeteLagoasFoto13.png" alt="Rural Mapas"></span>
+        <span>Rural Mapas<span style="color:var(--accent)">.</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#atuacao">Atuação</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    </div>
+  </header>
+
   <main>
-    <section class="hero" id="inicio" style="border-top:0"><div class="wrap hero-content reveal">
-      <div class="eyebrow mono">Topografia · Georreferenciamento · Geotecnologias</div>
-      <h1>Rural<br><span>Mapas.</span></h1>
-      <p class="hero-copy">A Rural Mapas oferece serviços de topografia, georreferenciamento e geotecnologias para imóveis rurais e urbanos. Com profissionais credenciados junto ao INCRA e equipe técnica especializada, entregamos informações geográficas com precisão para projetos e propriedades.</p>
-      <div class="hero-actions"><a class="btn primary" href="#servicos">Conheça os serviços <span aria-hidden="true">↗</span></a><a class="btn" href="https://wa.me/5531990681681" target="_blank" rel="noreferrer">Falar no WhatsApp</a></div>
-      <div class="hero-meta"><span><i class="dot"></i> Rural Mapas — Geotecnologias</span><span>Sete Lagoas · Minas Gerais</span><span>Atendimento no Brasil</span></div>
-    </div></section>
-    <section id="sobre"><div class="wrap">
-      <div class="section-head reveal"><div><div class="mono">01 / Quem somos</div><h2>Soluções para<br>o seu território</h2></div><p>Precisão técnica e informação geográfica para apoiar propriedades, projetos e tomada de decisão com segurança.</p></div>
-      <div class="about-grid"><div class="about-text reveal">
-        <p>A <strong>Rural Mapas</strong> é uma empresa brasileira que oferece serviços de topografia, georreferenciamento e geotecnologias. Atende proprietários rurais, produtores agrícolas, investidores, empresas e profissionais que precisam de dados geoespaciais confiáveis.</p>
-        <p>Os serviços são realizados por <strong>profissionais credenciados junto ao INCRA</strong>, conforme os requisitos e normas aplicáveis a cada trabalho, com uso de equipamentos de precisão e procedimentos técnicos adequados.</p>
-        <p>Sediada em <strong>Sete Lagoas–MG</strong>, a Rural Mapas atende a região e presta serviços em outras localidades do Brasil, conforme as características e necessidades de cada projeto.</p>
-      </div><aside class="skill-panel reveal"><h3>Para quem atendemos</h3><div class="tags"><span class="tag">Proprietários rurais</span><span class="tag">Produtores agrícolas</span><span class="tag">Empreendimentos</span><span class="tag">Projetos urbanos</span><span class="tag">Imóveis e loteamentos</span><span class="tag">Consultorias</span></div></aside></div>
-    </div></section>
-    <section id="servicos"><div class="wrap">
-      <div class="section-head reveal"><div><div class="mono">02 / O que fazemos</div><h2>Serviços técnicos</h2></div><p>Levantamentos e produtos geoespaciais para propriedades, obras, certificação e análise de áreas.</p></div>
-      <div class="projects">
-        <article class="project featured reveal"><div class="project-top"><div class="project-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 18l6-6 4 4 7-9"/><path d="M18 7h2v2"/></svg></div><span class="mono">Topografia</span></div><h3>Levantamentos topográficos</h3><p>Execução de medições precisas para definição de limites, cotas, pontos de referência e áreas de interesse.</p><ul><li>Plantas e perfis topográficos</li><li>Levantamento de áreas rurais e urbanas</li><li>Parâmetros para projetos e regularização</li></ul></article>
-        <article class="project reveal"><div class="project-top"><div class="project-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18h18"/><path d="M7 18V8l5-4 5 4v10"/><path d="M10 11h4"/></svg></div><span class="mono">INCRA</span></div><h3>Georreferenciamento</h3><p>Atendimento para imóveis rurais com procedimentos técnicos e documentação adequada para cada caso.</p></article>
-        <article class="project reveal"><div class="project-top"><div class="project-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15l6-6 4 4 6-8"/><path d="M20 5h-4v4"/><path d="M4 20h16"/></svg></div><span class="mono">Dados</span></div><h3>Geoprocessamento</h3><p>Análise e organização de informações geográficas para mapas, relatórios e tomada de decisão.</p></article>
-        <article class="project reveal"><div class="project-top"><div class="project-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16l5-5 4 3 7-9"/><path d="M18 5h3v3"/><path d="M4 20h16"/></svg></div><span class="mono">Drone</span></div><h3>Levantamentos com drones</h3><p>Mapeamento aéreo com auxílio de tecnologias para registros e informações de áreas e obras.</p></article>
+    <section class="hero" id="inicio" style="border-top:0">
+      <div class="wrap hero-content reveal">
+        <div>
+          <div class="eyebrow mono">Topografia · Georreferenciamento · Geotecnologias</div>
+          <h1>Rural<br><span>Mapas.</span></h1>
+          <p class="hero-copy">A Rural Mapas oferece serviços de topografia, georreferenciamento e geotecnologias para imóveis rurais e urbanos. Com profissionais credenciados junto ao INCRA e equipe técnica especializada, entregamos informações geográficas com precisão para projetos e propriedades.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#servicos">Conheça os serviços <span aria-hidden="true">↗</span></a>
+            <a class="btn" href="https://wa.me/5531990681681" target="_blank" rel="noreferrer">Falar no WhatsApp</a>
+          </div>
+          <div class="hero-meta">
+            <span><i class="dot"></i> Rural Mapas — Geotecnologias</span>
+            <span>Sete Lagoas · Minas Gerais</span>
+            <span>Atendimento no Brasil</span>
+          </div>
+        </div>
       </div>
-    </div></section>
-    <section id="atuacao"><div class="wrap">
-      <div class="section-head reveal"><div><div class="mono">03 / Como trabalhamos</div><h2>Precisão em cada etapa</h2></div><p>Atendimento próximo, escopo definido e soluções adequadas às características de cada projeto.</p></div>
-      <div class="timeline reveal">
-        <article class="role"><div class="role-meta">Equipe técnica</div><h3>Profissionais credenciados junto ao INCRA</h3><p>Serviços de georreferenciamento rural e elaboração de peças técnicas com acompanhamento e qualidade.</p></article>
-        <article class="role"><div class="role-meta">Tecnologia</div><h3>Equipamentos de precisão</h3><p>Utilização de equipamentos e ferramentas adequadas para levantamentos, georreferenciamento e análise espacial.</p></article>
-        <article class="role"><div class="role-meta">Localização</div><h3>Sete Lagoas–MG e atendimento no Brasil</h3><p>Atendimento em Sete Lagoas e região, com possibilidade de atuação em outras localidades conforme demanda.</p></article>
-      </div>
-    </div></section>
+    </section>
 
-    <section id="galeria"><div class="wrap">
-      <div class="section-head reveal"><div><div class="mono">04 / Galeria</div><h2>Trabalhos e ambientes de atuação</h2></div><p>Exemplos de projetos, áreas e situações em que a Rural Mapas atua com tecnologia e precisão.</p></div>
-      <div class="gallery-grid reveal">
-        <figure class="gallery-item"><img src="imagens/RuralMapas-SeteLagoasFoto1.png" alt="Levantamento topográfico Rural Mapas"><figcaption><strong>Levantamento topográfico</strong>Atuação e execução em áreas com necessidade de medição precisa.</figcaption></figure>
-        <figure class="gallery-item"><img src="imagens/RuralMapas-SeteLagoasFoto2.png" alt="Georreferenciamento Rural Mapas"><figcaption><strong>Georreferenciamento</strong>Processos de localização e referência geográfica para imóveis e áreas.</figcaption></figure>
-        <figure class="gallery-item"><img src="imagens/RuralMapas-SeteLagoasFoto3.png" alt="Mapeamento de área rural"><figcaption><strong>Áreas rurais</strong>Mapeamento de perímetros e características para diferentes finalidades.</figcaption></figure>
-        <figure class="gallery-item"><img src="imagens/RuralMapas-SeteLagoasFoto4.png" alt="Projeto de geotecnologia"><figcaption><strong>Geotecnologias</strong>Uso de tecnologias e dados espaciais para melhor entendimento do terreno.</figcaption></figure>
-        <figure class="gallery-item"><img src="imagens/RuralMapas-SeteLagoasFoto9.png" alt="Trabalho de campo Rural Mapas"><figcaption><strong>Trabalho em campo</strong>Execução técnica com atenção aos detalhes do projeto e da localidade.</figcaption></figure>
-        <figure class="gallery-item"><img src="imagens/RuralMapas-SeteLagoasFoto12.png" alt="Imóvel rural com topografia"><figcaption><strong>Imóveis e projetos</strong>Estruturação geográfica para suporte a propriedades e empreendimentos.</figcaption></figure>
+    <section id="sobre">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="mono">01 / Quem somos</div>
+            <h2>Soluções para<br>o seu território</h2>
+          </div>
+          <p>Precisão técnica e informação geográfica para apoiar propriedades, projetos e decisões.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>A <strong>Rural Mapas</strong> é uma empresa brasileira que oferece serviços de topografia, georreferenciamento e geotecnologias. Atende proprietários rurais, produtores agrícolas, investidores e empresas que necessitam de dados confiáveis para sua área.</p>
+            <p>Os serviços são realizados por <strong>profissionais credenciados junto ao INCRA</strong>, conforme requisitos e normas aplicáveis a cada trabalho, com uso de equipamentos de precisão e práticas técnicas adequadas.</p>
+            <p>Sediada em <strong>Sete Lagoas–MG</strong>, a Rural Mapas atende a região e presta serviços em outras localidades do Brasil, conforme as características e necessidades de cada projeto.</p>
+          </div>
+          <aside class="skill-panel reveal">
+            <h3>Para quem atendemos</h3>
+            <div class="tags">
+              <span class="tag">Proprietários rurais</span>
+              <span class="tag">Produtores agrícolas</span>
+              <span class="tag">Imobiliárias</span>
+              <span class="tag">Empreendimentos</span>
+              <span class="tag">Empresas e consultorias</span>
+            </div>
+          </aside>
+        </div>
       </div>
-    </div></section>
+    </section>
 
-    <section id="contato"><div class="wrap"><div class="contact reveal"><div><div class="mono">05 / Entre em contato</div><h2>Vamos conversar<br>sobre seu projeto?</h2><p>Solicite informações sobre serviços, projetos e atendimento para imóveis rurais, urbanos e demandas específicas.</p><div class="contact-list"><div class="contact-item"><div class="mini">WA</div><div><span>WhatsApp</span><small>+55 (31) 99068-1681</small></div></div><div class="contact-item"><div class="mini">MG</div><div><span>Atendimento</span><small>Sete Lagoas – Minas Gerais</small></div></div></div></div><div class="contact-box"><div class="mono">Solicitação</div><p>Também atendemos clientes em outras localidades do Brasil, com critérios definidos conforme a demanda, a logística e as características do projeto.</p><a class="btn primary" href="https://wa.me/5531990681681" target="_blank" rel="noreferrer">Solicitar atendimento <span aria-hidden="true">↗</span></a></div></div></div></section>
+    <section id="servicos">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="mono">02 / O que fazemos</div>
+            <h2>Serviços técnicos</h2>
+          </div>
+          <p>Levantamentos e produtos geoespaciais para propriedades, obras, certificações e gestão territorial.</p>
+        </div>
+        <div class="projects">
+          <article class="project featured reveal">
+            <div class="project-top">
+              <div class="project-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 18L9 12L13 16L20 8"/><path d="M20 8H14M20 8V14"/></svg>
+              </div>
+            </div>
+            <h3>Georreferenciamento e regularização</h3>
+            <p>Preparação técnica para imóveis rurais, perímetros, matrículas e documentos cartográficos com apoio de dados geoespaciais.</p>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-top">
+              <div class="project-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18V6M21 18V6M7 6V3M17 6V3M3 10H21"/></svg>
+              </div>
+            </div>
+            <h3>Topografia</h3>
+            <p>Levantamentos de área com precisão, locação e apoio para projetos rurais, urbanos e industriais.</p>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-top">
+              <div class="project-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17L10 11L14 15L20 9"/><path d="M20 9H15M20 9V14"/></svg>
+              </div>
+            </div>
+            <h3>Mapeamento</h3>
+            <p>Produção de mapas, modelos e representações do território para análise, projetos e acompanhamento.</p>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-top">
+              <div class="project-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 18V6M8 18V10M12 18V8M16 18V12M20 18V4"/></svg>
+              </div>
+            </div>
+            <h3>Geoprocessamento</h3>
+            <p>Tratamento de dados espaciais, imagens, bases e informações para suporte técnico e tomada de decisão.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="atuacao">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="mono">03 / Como trabalhamos</div>
+            <h2>Precisão em cada etapa</h2>
+          </div>
+          <p>Atendimento próximo, escopo definido e soluções adequadas às características de cada projeto.</p>
+        </div>
+        <div class="timeline reveal">
+          <article class="role">
+            <div class="role-meta">Equipe técnica</div>
+            <h3>Profissionais credenciados junto ao INCRA</h3>
+            <p>Serviços de georreferenciamento rural e elaboração de peças técnicas com respaldo profissional.</p>
+          </article>
+          <article class="role">
+            <div class="role-meta">Tecnologia</div>
+            <h3>Equipamentos de precisão</h3>
+            <p>Utilização de ferramentas e tecnologias suficientes para levantamentos, locações e geoprocessamento.</p>
+          </article>
+          <article class="role">
+            <div class="role-meta">Localização</div>
+            <h3>Sete Lagoas–MG e atendimento no Brasil</h3>
+            <p>Atendimento em Sete Lagoas e região, com possibilidade de atuação em outras localidades do Brasil.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="mono">04 / Galeria</div>
+            <h2>Trabalhos e ambientes de atuação</h2>
+          </div>
+          <p>Exemplos de projetos, áreas e situações em que a Rural Mapas atua.</p>
+        </div>
+        <div class="gallery-grid reveal">
+          <figure class="gallery-item"><img src="imagens/RuralMapas-SeteLagoasFoto1.png" alt="Levantamento topográfico Rural Mapas"><figcaption><strong>Levantamento topográfico</strong>Atuação e execução técnica em campo.</figcaption></figure>
+          <figure class="gallery-item"><img src="imagens/RuralMapas-SeteLagoasFoto2.png" alt="Georreferenciamento Rural Mapas"><figcaption><strong>Georreferenciamento</strong>Processos de localização e espacialização.</figcaption></figure>
+          <figure class="gallery-item"><img src="imagens/RuralMapas-SeteLagoasFoto3.png" alt="Mapeamento de área rural"><figcaption><strong>Áreas rurais</strong>Mapeamento de perímetros e características do terreno.</figcaption></figure>
+          <figure class="gallery-item"><img src="imagens/RuralMapas-SeteLagoasFoto4.png" alt="Projeto de geotecnologia"><figcaption><strong>Geotecnologias</strong>Uso de tecnologias e dados espaciais para análise.</figcaption></figure>
+          <figure class="gallery-item"><img src="imagens/RuralMapas-SeteLagoasFoto9.png" alt="Trabalho de campo Rural Mapas"><figcaption><strong>Trabalho em campo</strong>Execução técnica com atenção às condições reais do local.</figcaption></figure>
+          <figure class="gallery-item"><img src="imagens/RuralMapas-SeteLagoasFoto12.png" alt="Imóvel rural com topografia"><figcaption><strong>Imóveis e projetos</strong>Estruturação geográfica para decisões e documentação.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="wrap">
+        <div class="contact reveal">
+          <div>
+            <div class="mono">05 / Entre em contato</div>
+            <h2>Vamos conversar<br>sobre seu projeto?</h2>
+            <p>Solicite informações sobre topografia, georreferenciamento, mapeamento e serviços técnicos.</p>
+          </div>
+          <div class="contact-card">
+            <strong>Rural Mapas</strong>
+            <p>Sete Lagoas – MG</p>
+            <p><a href="https://wa.me/5531990681681" target="_blank" rel="noreferrer">WhatsApp: (31) 99068-1681</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer><div class="wrap footer-inner"><span>© <span id="year"></span> Rural Mapas — Topografia e Geotecnologias</span><div class="footer-links"><a href="#inicio">Voltar ao topo ↑</a><a href="https://wa.me/5531990681681" target="_blank" rel="noreferrer">WhatsApp</a></div></div></footer>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> Rural Mapas — Topografia e Geotecnologias</span>
+      <div class="footer-links">
+        <a href="#inicio">Voltar ao topo ↑</a>
+        <a href="https://wa.me/5531990681681" target="_blank" rel="noreferrer">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
     const navbar=document.getElementById('navbar');
     const menuBtn=document.getElementById('menuBtn');
