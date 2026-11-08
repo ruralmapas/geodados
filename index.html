@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101713">
+  <meta name="description" content="Portfólio profissional de Wellington Matos — geotecnologias, topografia, geoprocessamento e regularização fundiária pela Rural Mapas.">
+  <title>Wellington Matos | Geotecnologias & Geoprocessamento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0c110f; --panel:#121a16; --panel-2:#17211b; --text:#edf2ed;
+      --muted:#9aa99e; --line:rgba(205,225,211,.12); --accent:#a8c88a;
+      --accent-2:#d2e4b6; --max:1160px; --mono:"DM Mono",monospace;
+      --sans:"Manrope",sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    button,a{-webkit-tap-highlight-color:transparent}
+    .wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+    .mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+    .nav{position:fixed;z-index:20;inset:0 0 auto;border-bottom:1px solid transparent;transition:.3s;background:rgba(12,17,15,.35)}
+    .nav.scrolled{background:rgba(12,17,15,.86);backdrop-filter:blur(16px);border-color:var(--line)}
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.04em}
+    .brand-mark{width:34px;height:34px;border:1px solid rgba(168,200,138,.55);border-radius:10px;display:grid;place-items:center;color:var(--accent);font-family:var(--mono);font-size:.8rem}
+    .nav-links{display:flex;gap:30px;color:var(--muted);font-size:.82rem}
+    .nav-links a{transition:color .2s}.nav-links a:hover{color:var(--accent-2)}
+    .menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 11px;font:inherit}
+    .hero{min-height:790px;padding:170px 0 110px;position:relative;overflow:hidden;display:flex;align-items:center}
+    .hero:before{content:"";position:absolute;width:620px;height:620px;right:-180px;top:60px;border:1px solid rgba(168,200,138,.12);border-radius:50%;box-shadow:0 0 0 70px rgba(168,200,138,.025),0 0 0 140px rgba(168,200,138,.018)}
+    .hero:after{content:"";position:absolute;right:7%;top:22%;width:300px;height:300px;background:linear-gradient(135deg,transparent 49.7%,rgba(168,200,138,.13) 50%,transparent 50.3%),linear-gradient(45deg,transparent 49.7%,rgba(168,200,138,.1) 50%,transparent 50.3%);opacity:.7;pointer-events:none}
+    .hero-content{position:relative;z-index:1;max-width:790px}
+    .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+    .eyebrow:before{content:"";height:1px;width:34px;background:var(--accent)}
+    h1{font-size:clamp(3.2rem,7.6vw,6.4rem);line-height:.99;letter-spacing:-.075em;margin:0 0 25px;font-weight:800}
+    h1 span{color:var(--accent);display:block}
+    .hero-copy{max-width:650px;color:#b8c4bb;font-size:clamp(1rem,1.7vw,1.16rem);line-height:1.9;margin:0}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 18px;border-radius:7px;font-size:.84rem;font-weight:700;border:1px solid var(--line);transition:transform .25s,border-color .25s,background .25s}
+    .btn:hover{transform:translateY(-3px);border-color:rgba(168,200,138,.65)}
+    .btn.primary{background:var(--accent);color:#10170f;border-color:var(--accent)}
+    .btn.primary:hover{background:var(--accent-2)}
+    .hero-meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:70px;color:var(--muted);font: .7rem var(--mono);letter-spacing:.06em;text-transform:uppercase}
+    .hero-meta span{display:flex;align-items:center;gap:9px}.dot{width:6px;height:6px;background:var(--accent);border-radius:50%}
+    section{padding:112px 0;border-top:1px solid var(--line)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:54px}
+    .section-head h2{font-size:clamp(2.1rem,4vw,3.5rem);letter-spacing:-.065em;line-height:1.05;margin:12px 0 0}
+    .section-head p{max-width:390px;color:var(--muted);font-size:.9rem;margin:0}
+    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:start}
+    .about-text p{color:#b6c2b9;margin:0 0 20px;font-size:1rem}
+    .about-text strong{color:var(--text);font-weight:700}
+    .skill-panel{background:var(--panel);border:1px solid var(--line);padding:28px;border-radius:12px}
+    .skill-panel h3{font-size:.95rem;margin:0 0 20px}
+    .tags{display:flex;flex-wrap:wrap;gap:9px}
+    .tag{font: .72rem var(--mono);color:#c6d3c9;border:1px solid rgba(205,225,211,.14);background:rgba(255,255,255,.025);padding:8px 10px;border-radius:5px}
+    .skill-note{font-size:.78rem;color:var(--muted);margin:22px 0 0}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .project{position:relative;overflow:hidden;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:30px;min-height:310px;transition:transform .3s,border-color .3s,background .3s}
+    .project:hover{transform:translateY(-6px);border-color:rgba(168,200,138,.45);background:#151f19}
+    .project-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:35px}
+    .project-icon{width:43px;height:43px;border-radius:10px;background:rgba(168,200,138,.1);display:grid;place-items:center;color:var(--accent)}
+    .project-icon svg{width:22px;height:22px}
+    .project-kind{font: .67rem var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+    .project h3{font-size:1.35rem;letter-spacing:-.04em;margin:0 0 12px}
+    .project p{color:var(--muted);font-size:.88rem;max-width:510px;margin:0 0 22px}
+    .project-foot{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:auto}
+    .stack{display:flex;gap:7px;flex-wrap:wrap}
+    .stack span{font: .65rem var(--mono);color:#c4d2c7;background:rgba(255,255,255,.045);padding:5px 8px;border-radius:4px}
+    .repo-link{font-size:.78rem;color:var(--accent);white-space:nowrap}
+    .repo-link:hover{text-decoration:underline}
+    .project.featured{grid-column:span 2;min-height:260px;display:flex;flex-direction:column}
+    .project.featured:after{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(168,200,138,.12);border-radius:50%;right:-65px;bottom:-120px;box-shadow:0 0 0 35px rgba(168,200,138,.025),0 0 0 70px rgba(168,200,138,.018);pointer-events:none}
+    .timeline{max-width:850px;margin-left:10px;border-left:1px solid rgba(168,200,138,.28);padding-left:34px}
+    .role{position:relative;padding:0 0 42px}
+    .role:last-child{padding-bottom:0}
+    .role:before{content:"";position:absolute;left:-40px;top:8px;width:10px;height:10px;background:var(--accent);border:4px solid var(--bg);box-shadow:0 0 0 1px var(--accent);border-radius:50%}
+    .role-meta{font: .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+    .role h3{font-size:1.2rem;margin:8px 0 2px;letter-spacing:-.03em}
+    .role .company{color:#c1cdc4;font-size:.9rem}
+    .role p{max-width:680px;color:var(--muted);font-size:.88rem;margin:12px 0 0}
+    .contact{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:clamp(28px,5vw,60px);display:flex;align-items:center;justify-content:space-between;gap:35px}
+    .contact h2{font-size:clamp(2rem,4vw,3.4rem);letter-spacing:-.065em;line-height:1.05;margin:12px 0}
+    .contact p{color:var(--muted);max-width:500px;margin:0}
+    .contact-links{display:flex;flex-direction:column;gap:12px;min-width:190px}
+    footer{padding:34px 0;color:var(--muted);font-size:.75rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-links{display:flex;gap:20px}.footer-links a:hover{color:var(--accent)}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:800px){
+      .nav-links{display:none;position:absolute;top:75px;left:0;right:0;background:rgba(12,17,15,.97);padding:22px 24px 28px;border-bottom:1px solid var(--line);flex-direction:column;gap:18px}
+      .nav-links.open{display:flex}.menu-btn{display:block}
+      .hero{min-height:720px;padding:145px 0 85px}.hero:before{right:-390px;top:130px}
+      .about-grid{grid-template-columns:1fr;gap:35px}.section-head{display:block}.section-head p{margin-top:20px}
+      .contact{align-items:flex-start;flex-direction:column}.contact-links{flex-direction:row;flex-wrap:wrap}
+    }
+    @media(max-width:600px){
+      .wrap{width:min(100% - 34px,var(--max))}.nav-inner{height:68px}
+      .hero{min-height:690px;padding-top:130px}.hero-meta{margin-top:48px;gap:14px;flex-direction:column}
+      section{padding:82px 0}.projects{grid-template-columns:1fr}.project.featured{grid-column:auto}
+      .project{padding:24px;min-height:320px}.project-foot{align-items:flex-start;flex-direction:column}
+      .timeline{padding-left:25px}.role:before{left:-31px}
+      .contact-links{flex-direction:column;width:100%}.contact-links .btn{justify-content:center}
+      .footer-inner{flex-direction:column}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <header class="nav" id="navbar">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#inicio" aria-label="Rural Mapas — início"><span class="brand-mark">RM</span><span>Rural Mapas<span style="color:var(--accent)">.</span></span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a><a href="#projetos">Projetos</a><a href="#experiencia">Atuação</a><a href="#contato">Contato</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" style="border-top:0">
+      <div class="wrap hero-content reveal">
+        <div class="eyebrow mono">Geotecnologias · Território · Dados</div>
+        <h1>Wellington<br><span>Matos.</span></h1>
+        <p class="hero-copy">Geógrafo e especialista em geoprocessamento e georreferenciamento de imóveis rurais. Transformo dados territoriais em informação técnica para topografia, análise espacial e regularização fundiária.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projetos">Explorar projetos <span aria-hidden="true">↗</span></a>
+          <a class="btn" href="https://www.linkedin.com/in/rural-mapas-geotecnologias/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a class="btn" href="https://github.com/ruralmapas" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+        <div class="hero-meta">
+          <span><i class="dot"></i> Rural Mapas — Geotecnologias</span>
+          <span>Sete Lagoas · Minas Gerais · Brasil</span>
+          <span>Atuação regional e nacional</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="mono">01 / Perfil</div><h2>Sobre mim</h2></div>
+          <p>Conhecimento geográfico aplicado a problemas reais do território, com rigor técnico e visão integrada dos dados.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>Sou <strong>Wellington Matos</strong>, geógrafo e profissional de geotecnologias, com formação em Agronegócios e especialização em Geoprocessamento e Georreferenciamento de Imóveis Rurais, além de estudos em Desenvolvimento Territorial.</p>
+            <p>Minha atuação reúne <strong>topografia, georreferenciamento, geoprocessamento e regularização fundiária</strong>. O foco é organizar, interpretar e representar informações espaciais para apoiar decisões técnicas sobre imóveis e paisagens rurais e urbanas.</p>
+            <p>À frente da <strong>Rural Mapas — Geotecnologias</strong>, desenvolvo soluções que conectam levantamentos de campo, bases cartográficas e ferramentas de análise espacial, atendendo Sete Lagoas e região e projetos em outras localidades do Brasil.</p>
+          </div>
+          <aside class="skill-panel reveal">
+            <h3>Áreas de conhecimento</h3>
+            <div class="tags">
+              <span class="tag">Geoprocessamento</span><span class="tag">QGIS</span>
+              <span class="tag">SIG / GIS</span><span class="tag">Georreferenciamento</span>
+              <span class="tag">SIGEF / INCRA</span><span class="tag">SIRGAS 2000</span>
+              <span class="tag">Topografia</span><span class="tag">GNSS</span>
+              <span class="tag">Levantamento com drones</span><span class="tag">Sensoriamento remoto</span>
+              <span class="tag">Regularização fundiária</span><span class="tag">Cartografia</span>
+              <span class="tag">Análise espacial</span><span class="tag">CAR</span>
+              <span class="tag">Memorial descritivo</span><span class="tag">UTM</span>
+            </div>
+            <p class="skill-note">Ferramentas e competências apresentadas como áreas de atuação; a stack de cada projeto é identificada separadamente quando confirmada no repositório.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="mono">02 / Repositórios</div><h2>Projetos selecionados</h2></div>
+          <p>Uma amostra de trabalhos e ativos digitais ligados à organização e apresentação de soluções geoespaciais.</p>
+        </div>
+        <div class="projects">
+          <article class="project featured reveal">
+            <div class="project-top">
+              <div class="project-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6.5 9 3l6 3.5L21 3v14.5L15 21l-6-3.5L3 21V6.5Z"/><path d="M9 3v14.5M15 6.5V21M5.5 9l1.5-.9M17 9l1.5-.9"/></svg>
+              </div>
+              <span class="project-kind">GitHub · Projeto público</span>
+            </div>
+            <h3>geodados — Rural Mapas</h3>
+            <p>Repositório público que reúne o arquivo HTML identificado como “Rural Mapas – Geotecnologias”. O material funciona como ativo digital de apresentação da marca e de seus serviços. O repositório consultado não informa descrição técnica, README ou stack adicional; por isso, a tecnologia exibida aqui se limita ao HTML identificado no arquivo.</p>
+            <div class="project-foot">
+              <div class="stack"><span>HTML</span><span>Web</span><span>Geotecnologias</span></div>
+              <a class="repo-link" href="https://github.com/ruralmapas/geodados" target="_blank" rel="noopener noreferrer">Acessar repositório ↗</a>
+            </div>
+          </article>
+          <article class="project reveal">
+            <div class="project-top">
+              <div class="project-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19V5m0 14h16"/><path d="m6 15 4-4 3 2 5-7"/><circle cx="10" cy="11" r="1"/><circle cx="13" cy="13" r="1"/></svg>
+              </div>
+              <span class="project-kind">Área de atuação</span>
+            </div>
+            <h3>Inteligência territorial</h3>
+            <p>Integração de dados cartográficos, levantamentos e informações georreferenciadas para apoiar a leitura do território e a tomada de decisão em imóveis rurais e urbanos.</p>
+            <div class="project-foot"><div class="stack"><span>GIS</span><span>Cartografia</span><span>Análise espacial</span></div></div>
+          </article>
+          <article class="project reveal">
+            <div class="project-top">
+              <div class="project-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z"/><path d="m4.5 7.8 7.5 4.3 7.5-4.3M12 12v8.5"/></svg>
+              </div>
+              <span class="project-kind">Área de atuação</span>
+            </div>
+            <h3>Georreferenciamento rural</h3>
+            <p>Fluxos técnicos para representação de limites, organização de dados espaciais e documentação de imóveis rurais, em alinhamento com os procedimentos aplicáveis do INCRA e do SIGEF.</p>
+            <div class="project-foot"><div class="stack"><span>SIGEF</span><span>INCRA</span><span>SIRGAS 2000</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="mono">03 / Trajetória</div><h2>Experiência & atuação</h2></div>
+          <p>Frentes profissionais alinhadas à formação em geografia, agronegócios e geotecnologias.</p>
+        </div>
+        <div class="timeline reveal">
+          <article class="role">
+            <div class="role-meta">Atuação profissional · Atual</div>
+            <h3>Geógrafo | Geotecnologias e Regularização Fundiária</h3>
+            <div class="company">Rural Mapas — Topografia e Geotecnologias · Sete Lagoas, MG</div>
+            <p>Atuação em georreferenciamento de imóveis rurais, topografia, levantamentos com drones, GIS e geoprocessamento, elaboração de produtos cartográficos e apoio técnico a processos de regularização fundiária. Atendimento na região de Sete Lagoas e em projetos em todo o Brasil.</p>
+          </article>
+          <article class="role">
+            <div class="role-meta">Formação acadêmica</div>
+            <h3>Bacharel em Agronegócios</h3>
+            <div class="company">Universidade Federal de Lavras — UFLA</div>
+            <p>Formação multidisciplinar com interface entre território, atividades agropecuárias e desenvolvimento rural.</p>
+          </article>
+          <article class="role">
+            <div class="role-meta">Especialização e pós-graduação</div>
+            <h3>Geoprocessamento e Georreferenciamento de Imóveis Rurais</h3>
+            <div class="company">Especialização · Desenvolvimento Territorial</div>
+            <p>Qualificação voltada à análise espacial, representação cartográfica e compreensão dos processos territoriais.</p>
+          </article>
+        </div>
+        <p class="skill-note" style="margin:28px 0 0">Nota: o perfil do LinkedIn não pôde ser extraído automaticamente nesta consulta. Cargos, empresas e períodos não confirmados foram omitidos ou apresentados como síntese da atuação informada, sem atribuir datas não verificadas.</p>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="wrap">
+        <div class="contact reveal">
+          <div>
+            <div class="mono">04 / Vamos conversar</div>
+            <h2>Seu território.<br>Novas possibilidades.</h2>
+            <p>Para projetos, parcerias e demandas em geotecnologias, topografia e regularização fundiária, entre em contato pelos canais profissionais.</p>
+          </div>
+          <div class="contact-links">
+            <a class="btn primary" href="https://www.linkedin.com/in/rural-mapas-geotecnologias/" target="_blank" rel="noopener noreferrer">Conectar no LinkedIn ↗</a>
+            <a class="btn" href="https://github.com/ruralmapas" target="_blank" rel="noopener noreferrer">Explorar GitHub ↗</a>
+            <a class="btn" href="https://rural-mapas-geotecnologias.landingsite.dev/" target="_blank" rel="noopener noreferrer">Site Rural Mapas ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> Wellington Matos · Rural Mapas — Geotecnologias</span>
+      <div class="footer-links"><a href="#inicio">Voltar ao topo ↑</a><a href="https://github.com/ruralmapas" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/rural-mapas-geotecnologias/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const updateNav = () => navbar.classList.toggle('scrolled', window.scrollY > 18);
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
